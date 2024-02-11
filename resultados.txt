@@ -1,4 +1,29 @@
 
+Resultados TC1/TC1.Sales.json
+
+Product                              Price  Quantity  Subtotal
+Green smoothie..................... $ 17.68   22     $ 388.96    
+Raw legums......................... $ 17.11   21     $ 359.31    
+Pesto with basil................... $ 18.19   2      $ 36.38     
+Hazelnut in black ceramic bowl..... $ 27.35   7      $ 191.45    
+Fresh stawberry.................... $ 28.59   5      $ 142.95    
+Homemade bread..................... $ 17.48   6      $ 104.88    
+Pears juice........................ $ 19.49   3      $ 58.47     
+Cuban sandwiche.................... $ 18.50   11     $ 203.50    
+Smoothie with chia seeds........... $ 25.26   3      $ 75.78     
+Sandwich with salad................ $ 22.48   5      $ 112.40    
+Cherry............................. $ 14.35   4      $ 57.40     
+Corn............................... $ 13.55   19     $ 257.45    
+Fresh blueberries.................. $ 21.01   7      $ 147.07    
+Rustic breakfast................... $ 21.32   3      $ 63.96     
+Plums.............................. $ 19.18   4      $ 76.72     
+French fries....................... $ 18.32   3      $ 54.96     
+Ground beef meat burger............ $ 11.73   4      $ 46.92     
+Tomatoes........................... $ 26.03   2      $ 52.06     
+Peaches on branch.................. $ 25.62   2      $ 51.24     
+
+total............................................... $ 2,481.86
+
 Resultados TC2/TC2.Sales.json
 
 Product                              Price  Quantity  Subtotal
