@@ -1,4 +1,4 @@
-'''Programa que calcula las ventas totales de 2 archivos j'''
+'''Programa que calcula las ventas totales de archivos json'''
 import sys
 import json
 
