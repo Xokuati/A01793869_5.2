@@ -20,12 +20,15 @@ class Sales:
         return self.sales_list
 
 
-def exist_product(list_product, product):
+def exist_product(list_product, product, quantity):
     '''valida si existe uel producto en la lista'''
     res = False
     for prod in list_product:
         if product in prod["title"]:
-            res = True
+            if prod["quantity"] > 0 and quantity > 0:
+                res = True
+            elif prod["quantity"] < 0 and quantity < 0:
+                res = True
     return res
 
 
@@ -33,7 +36,10 @@ def acualiza_cantidad(list_product, value, new_quantity):
     '''actualiza la cantidad de productos vendidos'''
     for lista in list_product:
         if value in lista["title"]:
-            lista["quantity"] += new_quantity
+            if lista["quantity"] > 0 and new_quantity > 0:
+                lista["quantity"] += new_quantity
+            elif lista["quantity"] < 0 and new_quantity < 0:
+                lista["quantity"] += new_quantity
 
 
 def otener_valores(file_name):
@@ -90,8 +96,8 @@ def calcular_precios(dic_products, dic_sales):
     dic_prod = []
     for prod in dic_products:
         for sal in dic_sales:
-            if prod["title"] in sal["Product"]:
-                if not exist_product(dic_prod, prod["title"]):
+            if prod["title"] == sal["Product"]:
+                if not exist_product(dic_prod, prod["title"], sal["Quantity"]):
                     newd = Sales(title=prod["title"], price=prod["price"],
                                  quantity=sal["Quantity"])
                     dic_prod.append(newd.__dict__)
@@ -108,14 +114,14 @@ def obten_resultados(dic_sales):
     quantity = "quantity"
     total = "total"
     total_sale = 0
-    resume.append('Product'.ljust(36) + 'Price'.ljust(7) +
-                  "Quantity".ljust(9) + "Subtotal".ljust(6))
+    resume.append('Product'.ljust(37) + 'Price'.ljust(7) +
+                  "Quantity".ljust(10) + "Subtotal".ljust(6))
     for key in dic_sales:
         subt = key[price] * key[quantity]
-        resume.append(f"{key[product]:.<35} ${key[price]:<7.2f} " +
-                      f"{key[quantity]:<6} ${subt:<10.2f}")
+        resume.append(f"{key[product]:.<35} $ {key[price]:<7.2f} " +
+                      f"{key[quantity]:<6} $ {subt:<10.2f}")
         total_sale += subt
-    resume.append(f"\n{total:.<50} ${total_sale:,.2f}")
+    resume.append(f"\n{total:.<52} $ {total_sale:,.2f}")
     return resume
 
 
